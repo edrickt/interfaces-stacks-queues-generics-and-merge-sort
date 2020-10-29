@@ -120,5 +120,10 @@ namespace cis237_assignment4
             // Return the completed string
             return returnString;
         }
+
+        public void SortByModel()
+        {
+
+        }
     }
 }

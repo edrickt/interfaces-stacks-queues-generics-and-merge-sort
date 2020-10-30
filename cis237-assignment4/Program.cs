@@ -36,7 +36,7 @@ namespace cis237_assignment4
                         DroidCollection.droidList.Display();
                         break;
                     case 9:
-                        //
+                        DroidCollection.PopulateList();
                         break;
                 }
                 // Re-display the menu, and re-prompt for the choice

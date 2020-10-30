@@ -7,6 +7,8 @@ namespace cis237_assignment4
 {
     class DroidCollection : IDroidCollection
     {
+        private static bool addOnceBool = false;
+
         public static GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
         public static GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
         public static GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
@@ -128,8 +130,33 @@ namespace cis237_assignment4
             // Return the completed string
             return returnString;
         }
-        public void PopulateList()
+        public static void PopulateList()
         {
+            if (addOnceBool == false)
+            {
+                ProtocolDroid protocolDroid = new ProtocolDroid("Quadranium", "White", 1);
+                droidList.Push(protocolDroid);
+                AstromechDroid astromechDroid = new AstromechDroid("Carbonite", "White", true, true, true, true, 1);
+                droidList.Push(astromechDroid);
+                UtilityDroid utilityDroid = new UtilityDroid("Carbonite", "White", true, true, true);
+                droidList.Push(utilityDroid);
+                JanitorDroid janitorDroid = new JanitorDroid("Carbonite", "White", true, true, true, true, true);
+                droidList.Push(janitorDroid);
+                JanitorDroid janitor2Droid = new JanitorDroid("Quadranium", "Red", false, false, false, false, false);
+                droidList.Push(janitorDroid);
+                ProtocolDroid protocol2Droid = new ProtocolDroid("Carbonite", "Red", 2);
+                droidList.Push(protocolDroid);
+                UtilityDroid utility2Droid = new UtilityDroid("Quadranium", "Red", false, false, false);
+                droidList.Push(utilityDroid);
+                AstromechDroid astromech2Droid = new AstromechDroid("Quadranium", "Red", false, false, false, false, 2);
+                droidList.Push(astromechDroid);
+
+                addOnceBool = true;
+            }
+            else
+            {
+                Console.WriteLine(Environment.NewLine + "List already populated");
+            }
         }
         public void SortByModel()
         {

@@ -31,10 +31,12 @@ namespace cis237_assignment4
                     case 1:
                         userInterface.CreateDroid();
                         break;
-
                     // Choose to Print the droid
                     case 2:
-                        userInterface.PrintDroidList();
+                        DroidCollection.droidList.Display();
+                        break;
+                    case 9:
+                        //
                         break;
                 }
                 // Re-display the menu, and re-prompt for the choice

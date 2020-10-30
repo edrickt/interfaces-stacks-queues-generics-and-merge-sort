@@ -1,11 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace cis237_assignment4
 {
     class DroidCollection : IDroidCollection
     {
+        public static GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+        public static GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+        public static GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+        public static GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
+
+        public static GenericStack<IDroid> droidList = new GenericStack<IDroid>();
+
+        public static GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
+
         // Private variable to hold the collection of droids
         private IDroid[] droidCollection;
         // Private variable to hold the length of the Collection
@@ -30,9 +40,8 @@ namespace cis237_assignment4
             {
                 // Add the new droid. Note that the droidCollection is of type IDroid, but the droid being stored is
                 // of type Protocol Droid. This is okay because of Polymorphism.
-                droidCollection[lengthOfCollection] = new ProtocolDroid(Material, Color, NumberOfLanguages);
-                // Increase the length of the collection
-                lengthOfCollection++;
+                ProtocolDroid protocolDroid = new ProtocolDroid(Material, Color, NumberOfLanguages);
+                droidList.Push(protocolDroid);
                 // Return that it was successful
                 return true;
             }
@@ -50,8 +59,8 @@ namespace cis237_assignment4
         {
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
-                droidCollection[lengthOfCollection] = new UtilityDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm);
-                lengthOfCollection++;
+                UtilityDroid utilityDroid = new UtilityDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm);
+                droidList.Push(utilityDroid);
                 return true;
             }
             else
@@ -65,8 +74,8 @@ namespace cis237_assignment4
         {
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
-                droidCollection[lengthOfCollection] = new JanitorDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasTrashCompactor, HasVaccum);
-                lengthOfCollection++;
+                JanitorDroid janitorDroid = new JanitorDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasTrashCompactor, HasVaccum);
+                droidList.Push(janitorDroid);
                 return true;
             }
             else
@@ -80,8 +89,8 @@ namespace cis237_assignment4
         {
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
-                droidCollection[lengthOfCollection] = new AstromechDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasFireExtinguisher, NumberOfShips);
-                lengthOfCollection++;
+                AstromechDroid astromechDroid = new AstromechDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasFireExtinguisher, NumberOfShips);
+                droidList.Push(astromechDroid);
                 return true;
             }
             else
@@ -116,19 +125,15 @@ namespace cis237_assignment4
                     returnString += Environment.NewLine;
                 }
             }
-
             // Return the completed string
             return returnString;
         }
-
+        public void PopulateList()
+        {
+        }
         public void SortByModel()
         {
-            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
-            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
-            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
-            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
 
-            GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
         }
     }
 }

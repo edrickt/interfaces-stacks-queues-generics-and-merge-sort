@@ -60,5 +60,16 @@ namespace cis237_assignment4
             }
             return returnData;
         }
+        public void Display()
+        {
+            Console.WriteLine("DROIDS: ");
+            Node current = _head;
+            while (current != null)
+            {
+                Console.WriteLine(current.Data);
+                current = current.Next;
+            }
+            Console.WriteLine();
+        }
     }
 }

@@ -123,7 +123,10 @@ namespace cis237_assignment4
 
         public void SortByModel()
         {
-
+            GenericStack<ProtocolDroid> protocolStack = new GenericStack<ProtocolDroid>();
+            GenericStack<UtilityDroid> utilityStack = new GenericStack<UtilityDroid>();
+            GenericStack<AstromechDroid> astromechStack = new GenericStack<AstromechDroid>();
+            GenericStack<JanitorDroid> janitorStack = new GenericStack<JanitorDroid>();
         }
     }
 }

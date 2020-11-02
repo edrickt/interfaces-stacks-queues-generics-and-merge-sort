@@ -155,7 +155,7 @@ namespace cis237_assignment4
             }
             else
             {
-                Console.WriteLine(Environment.NewLine + "List already populated");
+                Console.WriteLine("List already populated" + Environment.NewLine);
             }
         }
         public void SortByModel()

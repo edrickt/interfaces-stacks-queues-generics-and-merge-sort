@@ -62,7 +62,6 @@ namespace cis237_assignment4
         }
         public void Display()
         {
-            Console.WriteLine("DROIDS: ");
             Node current = _head;
             while (current != null)
             {

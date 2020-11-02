@@ -186,6 +186,22 @@ namespace cis237_assignment4
                     astromechStack.Push((AstromechDroid)droid);
                 }
             }
+            while (astromechStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(astromechStack.Pop());
+            }
+            while (janitorStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(janitorStack.Pop());
+            }
+            while (utilityStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(utilityStack.Pop());
+            }
+            while (protocolStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(protocolStack.Pop());
+            }
         }
     }
 }

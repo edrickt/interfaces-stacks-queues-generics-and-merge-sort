@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -17,12 +19,13 @@ namespace cis237_assignment4
         protected Node _head;
         protected Node _tail;
         protected int _size;
+        protected int =
 
         public bool IsEmpty
         {
             get
             {
-                return _head == null;
+                return _head == null && true;
             }
         }
         public int Size
@@ -60,20 +63,26 @@ namespace cis237_assignment4
             }
             return returnData;
         }
-        public T GetList()
+        // Outside referece: https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
+        public T GetList(int index)
         {
-            T returnData = _head.Data;
-            if (IsEmpty)
+            Node current = _head;
+            int count = 0;
+            while (current != null)
             {
-                throw new Exception("List is empty");
+                if (count == index)
+                {
+                    return current.Data;
+                }
+                count++;
+                current = current.Next;
+                if (current == null)
+                {
+                    current = null;
+                    return current.Data;
+                }
             }
-            while (_head != null)
-            {
-                returnData = _head.Data;
-                _head = _head.Next;
-                return returnData;
-            }
-            return returnData;
+            return current.Data;
         }
         public void Display()
         {

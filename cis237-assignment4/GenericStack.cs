@@ -60,6 +60,21 @@ namespace cis237_assignment4
             }
             return returnData;
         }
+        public T GetList()
+        {
+            T returnData = _head.Data;
+            if (IsEmpty)
+            {
+                throw new Exception("List is empty");
+            }
+            while (_head != null)
+            {
+                returnData = _head.Data;
+                _head = _head.Next;
+                return returnData;
+            }
+            return returnData;
+        }
         public void Display()
         {
             Node current = _head;

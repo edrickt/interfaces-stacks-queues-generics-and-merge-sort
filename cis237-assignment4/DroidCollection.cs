@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace cis237_assignment4
@@ -158,9 +159,33 @@ namespace cis237_assignment4
                 Console.WriteLine("List already populated" + Environment.NewLine);
             }
         }
+        // Outside reference: https://stackoverflow.com/questions/19396346/how-to-iterate-through-linked-list/19396384
         public void SortByModel()
         {
-
+            IDroid droid;
+            for (int i = 0; droidList.GetList(i) != null; i++)
+            {
+                if (droidList.GetList(i) is ProtocolDroid)
+                {
+                    droid = droidList.GetList(i);
+                    protocolStack.Push((ProtocolDroid)droid);
+                }
+                if (droidList.GetList(i) is UtilityDroid)
+                {
+                    droid = droidList.GetList(i);
+                    utilityStack.Push((UtilityDroid)droid);
+                }
+                if (droidList.GetList(i) is JanitorDroid)
+                {
+                    droid = droidList.GetList(i);
+                    janitorStack.Push((JanitorDroid)droid);
+                }
+                if (droidList.GetList(i) is AstromechDroid)
+                {
+                    droid = droidList.GetList(i);
+                    astromechStack.Push((AstromechDroid)droid);
+                }
+            }
         }
     }
 }

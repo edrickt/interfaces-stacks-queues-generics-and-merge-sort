@@ -160,10 +160,10 @@ namespace cis237_assignment4
             }
         }
         // Outside reference: https://stackoverflow.com/questions/19396346/how-to-iterate-through-linked-list/19396384
-        public void SortByModel()
+        public static void SortByModel()
         {
             IDroid droid;
-            for (int i = 0; droidList.GetList(i) != null; i++)
+            for (int i = 1; droidList.GetList(i) != null; i++)
             {
                 if (droidList.GetList(i) is ProtocolDroid)
                 {
@@ -201,6 +201,11 @@ namespace cis237_assignment4
             while (protocolStack.IsEmpty != true)
             {
                 droidQueue.Enqueue(protocolStack.Pop());
+            }
+            while (droidQueue.IsEmpty != true)
+            {
+                droid = droidQueue.Dequeue();
+                droidList.Push(droid);
             }
         }
     }

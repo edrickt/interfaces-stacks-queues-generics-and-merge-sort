@@ -346,5 +346,12 @@ namespace cis237_assignment4
                     break;
             }
         }
+        
+        public void SortByModel()
+        {
+            Console.Clear();
+            Console.WriteLine("DROIDS SORTED BY MODEL");
+            Console.WriteLine("");
+        }
     }
 }

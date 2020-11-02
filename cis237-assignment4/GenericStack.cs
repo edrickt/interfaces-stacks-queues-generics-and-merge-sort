@@ -19,7 +19,6 @@ namespace cis237_assignment4
         protected Node _head;
         protected Node _tail;
         protected int _size;
-        protected int =
 
         public bool IsEmpty
         {

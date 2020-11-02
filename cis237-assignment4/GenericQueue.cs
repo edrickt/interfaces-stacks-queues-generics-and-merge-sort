@@ -22,7 +22,7 @@ namespace cis237_assignment4
         {
             get
             {
-                return _head == null;
+                return _head == null && true;
             }
         }
         public int Size

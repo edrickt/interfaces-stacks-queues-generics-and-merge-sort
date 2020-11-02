@@ -35,6 +35,10 @@ namespace cis237_assignment4
                     case 2:
                         DroidCollection.droidList.Display();
                         break;
+                    case 4:
+                        DroidCollection.SortByModel();
+                        userInterface.SortByModel();
+                        break;
                     case 9:
                         DroidCollection.PopulateList();
                         break;

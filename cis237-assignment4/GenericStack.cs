@@ -52,7 +52,8 @@ namespace cis237_assignment4
         {
             if (IsEmpty)
             {
-                throw new Exception("List is empty");
+                Console.Clear();
+                Console.WriteLine("List sorted by model"); ;
             }
             T returnData = _head.Data;
             _head = _head.Next;
@@ -63,50 +64,22 @@ namespace cis237_assignment4
             }
             return returnData;
         }
-        // Outside referece: https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
-        public T GetList(int index)
-        {
-            //Node current = _head;
-            //int count = 0;
-            //while (current != null)
-            //{
-            //    if (count == index)
-            //    {
-            //        return current.Data;
-            //    }
-            //    count++;
-            //    current = current.Next;
-            //    if (current == null)
-            //    {
-            //        current = null;
-            //        return current.Data;
-            //    }
-            //}
-            //return current.Data;
-            Node current = _head;
-            int count = 0;
-            while (current != null)
-            {
-                if (count == index)
-                {
-                    return current.Data;
-                }
-                count++;
-                current = current.Next;
-            }
-            _head = null;
-            current = _head;
-            return current.Data;
-        }
         public void Display()
         {
             Node current = _head;
-            while (current != null)
+            if (current != null)
             {
-                Console.WriteLine(current.Data);
-                current = current.Next;
+                while (current != null)
+                {
+                    Console.WriteLine(current.Data);
+                    current = current.Next;
+                }
+                Console.WriteLine();
             }
-            Console.WriteLine();
+            else
+            {
+                Console.WriteLine("LIST EMPTY, PLEASE POPULATE FIRST" + Environment.NewLine);
+            }
         }
     }
 }

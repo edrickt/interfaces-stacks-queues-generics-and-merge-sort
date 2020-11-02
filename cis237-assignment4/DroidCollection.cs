@@ -156,51 +156,52 @@ namespace cis237_assignment4
             }
             else
             {
-                Console.WriteLine("List already populated" + Environment.NewLine);
+                Console.WriteLine("LIST ALREADY POPULATED" + Environment.NewLine);
             }
         }
         // Outside reference: https://stackoverflow.com/questions/19396346/how-to-iterate-through-linked-list/19396384
         public static void SortByModel()
         {
             IDroid droid;
-            for (int i = 1; droidList.GetList(i) != null; i++)
+
+            while (droidList.IsEmpty != true)
             {
-                if (droidList.GetList(i) is ProtocolDroid)
+                while (droidList.IsEmpty != true)
                 {
-                    droid = droidList.GetList(i);
-                    protocolStack.Push((ProtocolDroid)droid);
-                }
-                else if (droidList.GetList(i) is JanitorDroid)
-                {
-                    droid = droidList.GetList(i);
-                    janitorStack.Push((JanitorDroid)droid);
-                }
-                else if (droidList.GetList(i) is AstromechDroid)
-                {
-                    droid = droidList.GetList(i);
-                    astromechStack.Push((AstromechDroid)droid);
-                }
-                else if (droidList.GetList(i) is UtilityDroid)
-                {
-                    droid = droidList.GetList(i);
-                    utilityStack.Push((UtilityDroid)droid);
+                    droid = droidList.Pop();
+                    if (droid is ProtocolDroid)
+                    {
+                        protocolStack.Push((ProtocolDroid)droid);
+                    }
+                    else if (droid is JanitorDroid)
+                    {
+                        janitorStack.Push((JanitorDroid)droid);
+                    }
+                    else if (droid is AstromechDroid)
+                    {
+                        astromechStack.Push((AstromechDroid)droid);
+                    }
+                    else if (droid is UtilityDroid)
+                    {
+                        utilityStack.Push((UtilityDroid)droid);
+                    }
                 }
             }
-            while (astromechStack.IsEmpty != true)
+            while (protocolStack.IsEmpty != true)
             {
-                droidQueue.Enqueue(astromechStack.Pop());
-            }
-            while (janitorStack.IsEmpty != true)
-            {
-                droidQueue.Enqueue(janitorStack.Pop());
+                droidQueue.Enqueue(protocolStack.Pop());
             }
             while (utilityStack.IsEmpty != true)
             {
                 droidQueue.Enqueue(utilityStack.Pop());
             }
-            while (protocolStack.IsEmpty != true)
+            while (janitorStack.IsEmpty != true)
             {
-                droidQueue.Enqueue(protocolStack.Pop());
+                droidQueue.Enqueue(janitorStack.Pop());
+            }
+            while (astromechStack.IsEmpty != true)
+            {
+                droidQueue.Enqueue(astromechStack.Pop());
             }
             while (droidQueue.IsEmpty != true)
             {

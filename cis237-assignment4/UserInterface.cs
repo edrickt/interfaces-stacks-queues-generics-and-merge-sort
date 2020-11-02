@@ -29,8 +29,8 @@ namespace cis237_assignment4
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Sort by model");
-            Console.WriteLine("5. EXIT");
-            Console.WriteLine("9. Populate list");
+            Console.WriteLine("5. Populate list");
+            Console.WriteLine("9. EXIT");
         }
 
         // Method to get a menu choice
@@ -353,6 +353,17 @@ namespace cis237_assignment4
             Console.Clear();
             Console.WriteLine("DROIDS SORTED BY MODEL");
             Console.WriteLine("");
+        }
+
+        int populateCounter = 0;
+
+        public void PopulateList()
+        {
+            if (populateCounter == 0)
+            {
+                Console.WriteLine("LIST POPULATED" + Environment.NewLine);
+                populateCounter++;
+            }
         }
     }
 }

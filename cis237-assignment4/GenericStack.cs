@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Resources;
@@ -65,6 +66,23 @@ namespace cis237_assignment4
         // Outside referece: https://www.geeksforgeeks.org/write-a-function-to-get-nth-node-in-a-linked-list/
         public T GetList(int index)
         {
+            //Node current = _head;
+            //int count = 0;
+            //while (current != null)
+            //{
+            //    if (count == index)
+            //    {
+            //        return current.Data;
+            //    }
+            //    count++;
+            //    current = current.Next;
+            //    if (current == null)
+            //    {
+            //        current = null;
+            //        return current.Data;
+            //    }
+            //}
+            //return current.Data;
             Node current = _head;
             int count = 0;
             while (current != null)
@@ -75,12 +93,9 @@ namespace cis237_assignment4
                 }
                 count++;
                 current = current.Next;
-                if (current == null)
-                {
-                    current = null;
-                    return current.Data;
-                }
             }
+            _head = null;
+            current = _head;
             return current.Data;
         }
         public void Display()

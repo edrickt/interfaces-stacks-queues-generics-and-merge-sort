@@ -170,20 +170,20 @@ namespace cis237_assignment4
                     droid = droidList.GetList(i);
                     protocolStack.Push((ProtocolDroid)droid);
                 }
-                if (droidList.GetList(i) is UtilityDroid)
-                {
-                    droid = droidList.GetList(i);
-                    utilityStack.Push((UtilityDroid)droid);
-                }
-                if (droidList.GetList(i) is JanitorDroid)
+                else if (droidList.GetList(i) is JanitorDroid)
                 {
                     droid = droidList.GetList(i);
                     janitorStack.Push((JanitorDroid)droid);
                 }
-                if (droidList.GetList(i) is AstromechDroid)
+                else if (droidList.GetList(i) is AstromechDroid)
                 {
                     droid = droidList.GetList(i);
                     astromechStack.Push((AstromechDroid)droid);
+                }
+                else if (droidList.GetList(i) is UtilityDroid)
+                {
+                    droid = droidList.GetList(i);
+                    utilityStack.Push((UtilityDroid)droid);
                 }
             }
             while (astromechStack.IsEmpty != true)

@@ -22,7 +22,7 @@ namespace cis237_assignment4
             int choice = userInterface.GetMenuChoice();
 
             // While the choice is not equal to 3, continue to do work with the program
-            while (choice != 3)
+            while (choice != 5)
             {
                 // Test which choice was made
                 switch (choice)
@@ -35,7 +35,7 @@ namespace cis237_assignment4
                     case 2:
                         DroidCollection.droidList.Display();
                         break;
-                    case 4:
+                    case 3:
                         DroidCollection.SortByModel();
                         userInterface.SortByModel();
                         break;

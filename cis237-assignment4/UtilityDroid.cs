@@ -69,20 +69,18 @@ namespace cis237_assignment4
         // uses the base ToString method and appends more information to it.
         public override string ToString()
         {
-            CalculateTotalCost();
-
             string returnString =
                 base.ToString() +
                 "Has Tool Box: " + this.hasToolbox + Environment.NewLine +
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
                 "Has Arm: " + this.hasArm + Environment.NewLine;
 
-            if (this.GetType() == typeof(UtilityDroid))
-            {
-                returnString += Environment.NewLine +
-                    this.TotalCost.ToString("C") +
-                    Environment.NewLine;
-            }
+            //if (this.GetType() == typeof(UtilityDroid))
+            //{
+            //    returnString += Environment.NewLine +
+            //        this.TotalCost.ToString("C") +
+            //        Environment.NewLine;
+            //}
 
             return returnString;
         }

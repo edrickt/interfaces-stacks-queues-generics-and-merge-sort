@@ -34,18 +34,16 @@ namespace cis237_assignment4
                         break;
                     // Choose to Print the droid
                     case 2:
-                        DroidCollection.droidList.Display();
+                        //DroidCollection.droidList.Display();
+                        userInterface.PrintDroidList();
                         break;
                     case 3:
-                        DroidCollection.SortByModel();
                         userInterface.SortByModel();
                         break;
                     case 4:
-                        DroidCollection.SortByPrice();
-                        userInterface.SortByModel();
+                        userInterface.SortByPrice();
                         break;
                     case 5:
-                        DroidCollection.PopulateList();
                         userInterface.PopulateList();
                         break;
                 }

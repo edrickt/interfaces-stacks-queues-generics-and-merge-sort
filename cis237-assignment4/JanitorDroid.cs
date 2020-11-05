@@ -42,7 +42,6 @@ namespace cis237_assignment4
 
             return optionsCost;
         }
-
         protected override string GetModelToString()
         {
             return "Model: Janitor" + Environment.NewLine;
@@ -58,12 +57,12 @@ namespace cis237_assignment4
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
 
-            if (this.GetType() == typeof(JanitorDroid))
-            {
-                returnString += Environment.NewLine +
-                    this.TotalCost.ToString("C") +
-                    Environment.NewLine;
-            }
+            //if (this.GetType() == typeof(JanitorDroid))
+            //{
+            //    returnString += Environment.NewLine +
+            //        this.TotalCost.ToString("C") +
+            //        Environment.NewLine;
+            //}
 
             return returnString;
         }

@@ -39,6 +39,9 @@ namespace cis237_assignment4
             lengthOfCollection = 0;
         }
 
+        public DroidCollection()
+        { }
+
         // The Add method for a Protocol Droid. The parameters passed in match those needed for a protocol droid
         public bool Add(string Material, string Color, int NumberOfLanguages)
         {
@@ -143,28 +146,18 @@ namespace cis237_assignment4
             // Return the completed string
             return returnString;
         }
-        public static void PopulateList()
+        public void PopulateList()
         {
             if (addOnceBool == false)
             {
-                ProtocolDroid protocolDroid = new ProtocolDroid("Quadranium", "White", 1);
-                droidList.Push(protocolDroid);
-                AstromechDroid astromechDroid = new AstromechDroid("Carbonite", "White", true, true, true, true, 1);
-                droidList.Push(astromechDroid);
-                UtilityDroid utilityDroid = new UtilityDroid("Carbonite", "White", true, true, true);
-                droidList.Push(utilityDroid);
-                JanitorDroid janitorDroid = new JanitorDroid("Carbonite", "White", true, true, true, true, true);
-                droidList.Push(janitorDroid);
-                JanitorDroid janitor2Droid = new JanitorDroid("Quadranium", "Red", false, false, false, false, false);
-                droidList.Push(janitorDroid);
-                ProtocolDroid protocol2Droid = new ProtocolDroid("Carbonite", "Red", 2);
-                droidList.Push(protocolDroid);
-                UtilityDroid utility2Droid = new UtilityDroid("Quadranium", "Red", false, false, false);
-                droidList.Push(utilityDroid);
-                AstromechDroid astromech2Droid = new AstromechDroid("Quadranium", "Red", false, false, false, false, 2);
-                droidList.Push(astromechDroid);
-
-                lengthOfCollection = lengthOfCollection + 8;
+                Add("Quadranium", "White", 1);
+                Add("Carbonite", "White", true, true, true, true, 1);
+                Add("Carbonite", "White", true, true, true);
+                Add("Carbonite", "White", true, true, true, true, true);
+                Add("Quadranium", "Red", false, false, false, false, false);
+                Add("Carbonite", "Red", 2);
+                Add("Quadranium", "Red", false, false, false);
+                Add("Quadranium", "Red", false, false, false, false, 2);
 
                 addOnceBool = true;
             }
@@ -220,7 +213,7 @@ namespace cis237_assignment4
                 droidList.Push(droid);
             }
         }
-        public static void SortByPrice()
+        public void SortByPrice()
         {
             MergeSort.Sort(droidCollection);
             droidList = new GenericStack<IDroid>();

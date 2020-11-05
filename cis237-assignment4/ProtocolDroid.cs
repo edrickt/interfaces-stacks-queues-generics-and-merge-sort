@@ -39,18 +39,16 @@ namespace cis237_assignment4
         // Override the ToString method to use the base ToString, and append new information to it.
         public override string ToString()
         {
-            CalculateTotalCost();
-
             string returnString =
                 base.ToString() +
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
 
-            if (this.GetType() == typeof(ProtocolDroid))
-            {
-                returnString += Environment.NewLine +
-                    this.TotalCost.ToString("C") +
-                    Environment.NewLine;
-            }
+            //if (this.GetType() == typeof(ProtocolDroid))
+            //{
+            //    returnString += Environment.NewLine +
+            //        this.TotalCost.ToString("C") +
+            //        Environment.NewLine;
+            //}
 
             return returnString;
         }

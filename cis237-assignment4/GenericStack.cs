@@ -53,7 +53,7 @@ namespace cis237_assignment4
             if (IsEmpty)
             {
                 Console.Clear();
-                Console.WriteLine("List sorted by model"); ;
+                Console.WriteLine("LIST EMPTY"); ;
             }
             T returnData = _head.Data;
             _head = _head.Next;

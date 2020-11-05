@@ -1,7 +1,10 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.Remoting.Messaging;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace cis237_assignment4
@@ -20,9 +23,10 @@ namespace cis237_assignment4
         public static GenericQueue<IDroid> droidQueue = new GenericQueue<IDroid>();
 
         // Private variable to hold the collection of droids
-        private IDroid[] droidCollection;
+        public static IDroid[] droidCollection;
+
         // Private variable to hold the length of the Collection
-        private int lengthOfCollection;
+        public static int lengthOfCollection;
 
         // Constructor that takes in the size of the collection.
         // It sets the size of the internal array that will be used.
@@ -44,7 +48,9 @@ namespace cis237_assignment4
                 // Add the new droid. Note that the droidCollection is of type IDroid, but the droid being stored is
                 // of type Protocol Droid. This is okay because of Polymorphism.
                 ProtocolDroid protocolDroid = new ProtocolDroid(Material, Color, NumberOfLanguages);
+                droidCollection[lengthOfCollection] = new ProtocolDroid(Material, Color, NumberOfLanguages);
                 droidList.Push(protocolDroid);
+                lengthOfCollection++;
                 // Return that it was successful
                 return true;
             }
@@ -63,7 +69,9 @@ namespace cis237_assignment4
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
                 UtilityDroid utilityDroid = new UtilityDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm);
+                droidCollection[lengthOfCollection] = new UtilityDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm);
                 droidList.Push(utilityDroid);
+                lengthOfCollection++;
                 return true;
             }
             else
@@ -78,7 +86,9 @@ namespace cis237_assignment4
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
                 JanitorDroid janitorDroid = new JanitorDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasTrashCompactor, HasVaccum);
+                droidCollection[lengthOfCollection] = new JanitorDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasTrashCompactor, HasVaccum);
                 droidList.Push(janitorDroid);
+                lengthOfCollection++;
                 return true;
             }
             else
@@ -93,7 +103,9 @@ namespace cis237_assignment4
             if (lengthOfCollection < (droidCollection.Length - 1))
             {
                 AstromechDroid astromechDroid = new AstromechDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasFireExtinguisher, NumberOfShips);
+                droidCollection[lengthOfCollection] = new AstromechDroid(Material, Color, HasToolBox, HasComputerConnection, HasArm, HasFireExtinguisher, NumberOfShips);
                 droidList.Push(astromechDroid);
+                lengthOfCollection++;
                 return true;
             }
             else
@@ -152,6 +164,8 @@ namespace cis237_assignment4
                 AstromechDroid astromech2Droid = new AstromechDroid("Quadranium", "Red", false, false, false, false, 2);
                 droidList.Push(astromechDroid);
 
+                lengthOfCollection = lengthOfCollection + 8;
+
                 addOnceBool = true;
             }
             else
@@ -166,25 +180,22 @@ namespace cis237_assignment4
 
             while (droidList.IsEmpty != true)
             {
-                while (droidList.IsEmpty != true)
+                droid = droidList.Pop();
+                if (droid is ProtocolDroid)
                 {
-                    droid = droidList.Pop();
-                    if (droid is ProtocolDroid)
-                    {
-                        protocolStack.Push((ProtocolDroid)droid);
-                    }
-                    else if (droid is JanitorDroid)
-                    {
-                        janitorStack.Push((JanitorDroid)droid);
-                    }
-                    else if (droid is AstromechDroid)
-                    {
-                        astromechStack.Push((AstromechDroid)droid);
-                    }
-                    else if (droid is UtilityDroid)
-                    {
-                        utilityStack.Push((UtilityDroid)droid);
-                    }
+                    protocolStack.Push((ProtocolDroid)droid);
+                }
+                else if (droid is JanitorDroid)
+                {
+                    janitorStack.Push((JanitorDroid)droid);
+                }
+                else if (droid is AstromechDroid)
+                {
+                    astromechStack.Push((AstromechDroid)droid);
+                }
+                else if (droid is UtilityDroid)
+                {
+                    utilityStack.Push((UtilityDroid)droid);
                 }
             }
             while (protocolStack.IsEmpty != true)
@@ -207,6 +218,15 @@ namespace cis237_assignment4
             {
                 droid = droidQueue.Dequeue();
                 droidList.Push(droid);
+            }
+        }
+        public static void SortByPrice()
+        {
+            MergeSort.Sort(droidCollection);
+            droidList = new GenericStack<IDroid>();
+            for (int i = 0; i < lengthOfCollection; i++)
+            {
+                droidList.Push(droidCollection[i]);
             }
         }
     }

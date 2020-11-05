@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography.X509Certificates;
 
 namespace cis237_assignment4
 {
@@ -37,6 +38,10 @@ namespace cis237_assignment4
                         break;
                     case 3:
                         DroidCollection.SortByModel();
+                        userInterface.SortByModel();
+                        break;
+                    case 4:
+                        DroidCollection.SortByPrice();
                         userInterface.SortByModel();
                         break;
                     case 5:

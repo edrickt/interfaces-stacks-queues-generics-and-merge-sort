@@ -63,6 +63,8 @@ namespace cis237_assignment4
         // Overriden ToString method to output the information for this droid. Uses work done in the base class
         public override string ToString()
         {
+            CalculateTotalCost();
+
             string returnString =
                 base.ToString() +
                 "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
@@ -70,9 +72,9 @@ namespace cis237_assignment4
 
             if (this.GetType() == typeof(AstromechDroid))
             {
-                //returnString += Environment.NewLine +
-                //    this.TotalCost.ToString("C") +
-                //    Environment.NewLine;
+                returnString += Environment.NewLine +
+                    this.TotalCost.ToString("C") +
+                    Environment.NewLine;
             }
 
             return returnString;

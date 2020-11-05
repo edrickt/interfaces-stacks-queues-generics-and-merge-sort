@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 using System.Text;
 
 namespace cis237_assignment4
@@ -29,6 +30,7 @@ namespace cis237_assignment4
             Console.WriteLine("1. Add a new droid to the system");
             Console.WriteLine("2. Print the list of droids out");
             Console.WriteLine("3. Sort by model");
+            Console.WriteLine("4. Sort by price");
             Console.WriteLine("5. Populate list");
             Console.WriteLine("9. EXIT");
         }
@@ -364,6 +366,13 @@ namespace cis237_assignment4
                 Console.WriteLine("LIST POPULATED" + Environment.NewLine);
                 populateCounter++;
             }
+        }
+
+        public void SortByPrice()
+        {
+            Console.Clear();
+            Console.WriteLine("DROIDS SORTED BY PRICE");
+            Console.WriteLine("");
         }
     }
 }

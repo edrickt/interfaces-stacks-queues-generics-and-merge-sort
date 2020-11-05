@@ -155,7 +155,7 @@ namespace cis237_assignment4
                 Add("Carbonite", "White", true, true, true);
                 Add("Carbonite", "White", true, true, true, true, true);
                 Add("Quadranium", "Red", false, false, false, false, false);
-                Add("Carbonite", "Red", 2);
+                Add("Tears of a Jedi", "Red", 2);
                 Add("Quadranium", "Red", false, false, false);
                 Add("Quadranium", "Red", false, false, false, false, 2);
 

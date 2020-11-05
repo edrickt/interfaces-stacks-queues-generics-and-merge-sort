@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
@@ -137,21 +138,25 @@ namespace cis237_assignment4
             return colorCost;
         }
         // Outside Reference: https://docs.microsoft.com/en-us/dotnet/api/system.icomparable.compareto?view=netframework-4.8#System_IComparable_CompareTo_System_Object_
+        // Outside Reference: https://stackoverflow.com/questions/4188013/how-to-implement-icomparable-interface
+        // Outside Reference: https://docs.microsoft.com/en-us/troubleshoot/dotnet/csharp/use-icomparable-icomparer
         public int CompareTo(object obj)
         {
-            if (obj == null)
-            {
-                return 1;
-            }
-            Droid otherPrice = obj as Droid;
-            if (otherPrice != null)
-            {
-                return this.totalCost.CompareTo(otherPrice.totalCost);
-            }
-            else
-            {
-                throw new ArgumentException("Object not droid");
-            }
+            //if (obj == null)
+            //{
+            //    return 1;
+            //}
+            //Droid otherPrice = obj as Droid;
+            //if (otherPrice != null)
+            //{
+            //    return this.totalCost.CompareTo(otherPrice.totalCost);
+            //}
+            //else
+            //{
+            //    throw new ArgumentException("Object not droid");
+            //}
+            IDroid droid = (Droid)obj;
+            return decimal.Compare(this.TotalCost, droid.TotalCost);
         }
     }
 }

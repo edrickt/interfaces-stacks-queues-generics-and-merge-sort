@@ -10,6 +10,7 @@ namespace cis237_assignment4
     class MergeSort
     {
         private MergeSort() { }
+
         // Outside Reference: https://algs4.cs.princeton.edu/22mergesort/Merge.java.html
         public static void Sort(IComparable[] a)
         {

@@ -68,12 +68,14 @@ namespace cis237_assignment4
                 "Has Fire Extinguisher: " + this.hasFireExtinguisher + Environment.NewLine +
                 "Number Of Ships: " + this.numberOfShips + Environment.NewLine;
 
-            //if (this.GetType() == typeof(AstromechDroid))
-            //{
-            //    returnString += Environment.NewLine +
-            //        this.TotalCost.ToString("C") +
-            //        Environment.NewLine;
-            //}
+            if (this.GetType() == typeof(AstromechDroid))
+            {
+                returnString += Environment.NewLine +
+                    this.TotalCost.ToString("C") +
+                    Environment.NewLine + Environment.NewLine +
+                    "****************************" +
+                    Environment.NewLine;
+            }
 
             return returnString;
         }

@@ -98,10 +98,10 @@ namespace cis237_assignment4
         }
 
         // Method to print out the droid list
-        public void PrintDroidList()
-        {
-            Console.WriteLine(this.droidCollection.GetPrintString());
-        }
+        //public void PrintDroidList()
+        //{
+        //     Console.WriteLine(this.droidCollection.GetPrintString());
+        //}
 
         // Display the Model Selection
         private void displayModelSelection()
@@ -354,7 +354,6 @@ namespace cis237_assignment4
         
         public void SortByModel()
         {
-            DroidCollection.SortByModel();
             Console.Clear();
             Console.WriteLine("DROIDS SORTED BY MODEL");
             Console.WriteLine("");

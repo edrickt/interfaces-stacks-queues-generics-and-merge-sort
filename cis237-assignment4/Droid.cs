@@ -156,7 +156,7 @@ namespace cis237_assignment4
             //    throw new ArgumentException("Object not droid");
             //}
             IDroid droid = (Droid)obj;
-            return decimal.Compare(this.TotalCost, droid.TotalCost);
+            return decimal.Compare(this.totalCost, droid.TotalCost);
         }
     }
 }

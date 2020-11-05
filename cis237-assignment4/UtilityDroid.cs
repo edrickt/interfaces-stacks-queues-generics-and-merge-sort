@@ -75,12 +75,14 @@ namespace cis237_assignment4
                 "Has Computer Connection: " + this.hasComputerConnection + Environment.NewLine +
                 "Has Arm: " + this.hasArm + Environment.NewLine;
 
-            //if (this.GetType() == typeof(UtilityDroid))
-            //{
-            //    returnString += Environment.NewLine +
-            //        this.TotalCost.ToString("C") +
-            //        Environment.NewLine;
-            //}
+            if (this.GetType() == typeof(UtilityDroid))
+            {
+                returnString += Environment.NewLine +
+                    this.TotalCost.ToString("C") +
+                    Environment.NewLine + Environment.NewLine +
+                    "****************************" +
+                    Environment.NewLine;
+            }
 
             return returnString;
         }

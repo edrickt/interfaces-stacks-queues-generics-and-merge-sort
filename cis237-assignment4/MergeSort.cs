@@ -43,7 +43,7 @@ namespace cis237_assignment4
                     a[k] = aux[j++];
                 else if (j > hi)
                     a[k] = aux[i++];
-                else if (j > hi)
+                else if (aux[j].CompareTo(aux[i]) < 0)
                     a[k] = aux[j++];
                 else
                     a[k] = aux[i++];

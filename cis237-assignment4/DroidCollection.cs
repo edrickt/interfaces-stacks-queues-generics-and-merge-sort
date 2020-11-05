@@ -215,11 +215,13 @@ namespace cis237_assignment4
         }
         public void SortByPrice()
         {
-            MergeSort.Sort(droidCollection);
+            IDroid droid;
+            MergeSort.Sort(droidCollection, lengthOfCollection);
             droidList = new GenericStack<IDroid>();
             for (int i = 0; i < lengthOfCollection; i++)
             {
-                droidList.Push(droidCollection[i]);
+                droid = droidList.Pop();
+                droidList.Push(droid);
             }
         }
     }

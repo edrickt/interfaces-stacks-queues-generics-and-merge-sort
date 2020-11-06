@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Edrick Tamayo
+// Thursday 3:30PM
+// November 6, 2020
+
+using System;
 using System.Security.Cryptography.X509Certificates;
 
 namespace cis237_assignment4
@@ -35,14 +39,16 @@ namespace cis237_assignment4
                     // Choose to Print the droid
                     case 2:
                         DroidCollection.droidList.Display();
-                        //userInterface.PrintDroidList();
                         break;
+                    // Sort by model
                     case 3:
                         userInterface.SortByModel();
                         break;
+                    // Sort by price
                     case 4:
                         userInterface.SortByPrice();
                         break;
+                    // Populate list
                     case 5:
                         userInterface.PopulateList();
                         break;

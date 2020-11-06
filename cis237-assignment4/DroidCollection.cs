@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Edrick Tamayo
+// Thursday 3:30PM
+// November 6, 2020
+
+using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Linq;
@@ -146,6 +150,8 @@ namespace cis237_assignment4
             // Return the completed string
             return returnString;
         }
+        // Will poopulate the lsit with droids, differing prices and models
+        // and can only populate once
         public void PopulateList()
         {
             if (addOnceBool == false)
@@ -166,11 +172,14 @@ namespace cis237_assignment4
                 Console.WriteLine("LIST ALREADY POPULATED" + Environment.NewLine);
             }
         }
-        // Outside reference: https://stackoverflow.com/questions/19396346/how-to-iterate-through-linked-list/19396384
+        // Will sort by model
         public static void SortByModel()
         {
+            // Temporary droid
             IDroid droid;
 
+            // While droidList isnt empty, then continue popping droids
+            // off of the droidList and pushing into corresponding stacks
             while (droidList.IsEmpty != true)
             {
                 droid = droidList.Pop();
@@ -191,6 +200,8 @@ namespace cis237_assignment4
                     utilityStack.Push((UtilityDroid)droid);
                 }
             }
+            // While the stacks are not empty, enqueue them into the
+            // droidQueue 
             while (protocolStack.IsEmpty != true)
             {
                 droidQueue.Enqueue(protocolStack.Pop());
@@ -207,14 +218,18 @@ namespace cis237_assignment4
             {
                 droidQueue.Enqueue(astromechStack.Pop());
             }
+            // Empty back into droidList as sorted droids
             while (droidQueue.IsEmpty != true)
             {
                 droid = droidQueue.Dequeue();
                 droidList.Push(droid);
             }
         }
+
+        // Will sort the droids by price
         public void SortByPrice()
         {
+            // Calculate the total cost of droids in droidCollection array
             foreach (IDroid droids in droidCollection)
             {
                 if (droids != null)
@@ -223,10 +238,13 @@ namespace cis237_assignment4
                 }
             }
 
+            // MergeSort the array passing in the array and size of the array
             MergeSort.Sort(droidCollection, lengthOfCollection);
 
+            // Empty droidList
             droidList = new GenericStack<IDroid>();
 
+            // Push the sorted droids into the list
             for (int i = 0; i < lengthOfCollection; i++)
             {
                 droidList.Push(droidCollection[i]);

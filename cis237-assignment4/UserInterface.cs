@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Edrick Tamayo
+// Thursday 3:30PM
+// November 6, 2020
+
+using System;
 using System.Collections.Generic;
 using System.Security.Policy;
 using System.Text;
@@ -9,6 +13,8 @@ namespace cis237_assignment4
     {
         // Create a class level variable for the droid collection
         IDroidCollection droidCollection;
+
+        // New instance of DroidCollection
         DroidCollection dc = new DroidCollection();
 
         // Constructor that will take in a droid collection to use
@@ -352,6 +358,7 @@ namespace cis237_assignment4
             }
         }
         
+        // Sort by model and call SortByModel() method from DroidCollection
         public void SortByModel()
         {
             DroidCollection.SortByModel();
@@ -360,8 +367,8 @@ namespace cis237_assignment4
             Console.WriteLine("");
         }
 
+        // Will populate list only once, using populate counter
         int populateCounter = 0;
-
         public void PopulateList()
         {
             dc.PopulateList();
@@ -372,6 +379,7 @@ namespace cis237_assignment4
             }
         }
 
+        // SortByPrice using method from DroidCollection.
         public void SortByPrice()
         {
             droidCollection.SortByPrice();

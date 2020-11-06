@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Edrick Tamayo
+// Thursday 3:30PM
+// November 6, 2020
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -135,6 +139,9 @@ namespace cis237_assignment4
 
             return colorCost;
         }
+
+        // A compare to method that must be implemented because 
+        // IDroid inheriting from IComparable
         // Outside Reference: https://docs.microsoft.com/en-us/dotnet/api/system.icomparable.compareto?view=netframework-4.8#System_IComparable_CompareTo_System_Object_
         // Outside Reference: https://stackoverflow.com/questions/4188013/how-to-implement-icomparable-interface
         // Outside Reference: https://docs.microsoft.com/en-us/troubleshoot/dotnet/csharp/use-icomparable-icomparer

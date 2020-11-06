@@ -1,4 +1,8 @@
-﻿using System;
+﻿// Edrick Tamayo
+// Thursday 3:30PM
+// November 6, 2020
+
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,7 +18,7 @@ namespace cis237_assignment4
 
         // Method to get the data for a droid into a nicely formated string that can be output.
         string GetPrintString();
-
+        // Method to sort by price
         void SortByPrice();
     }
 }

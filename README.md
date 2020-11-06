@@ -2,9 +2,11 @@
 
 ## Due
 
+11 / 6 / 20
+
 ## Author
 
-
+Edrick Tamayo
 
 ## Description
 
@@ -93,11 +95,17 @@ Be sure to think about what the time complexity for the bucket sort will be. Thi
 
 ## Outside Resources Used
 
+Merge Sort:
+https://algs4.cs.princeton.edu/22mergesort/Merge.java.html
 
+IComparable:
+https://docs.microsoft.com/en-us/troubleshoot/dotnet/csharp/use-icomparable-icomparer
+https://stackoverflow.com/questions/4188013/how-to-implement-icomparable-interface
+https://docs.microsoft.com/en-us/dotnet/api/system.icomparable.compareto?view=netframework-4.8#System_IComparable_CompareTo_System_Object_
 
 ## Known Problems, Issues, And/Or Errors in the Program
 
-
+No known issues or errors.
 
 ## Assignment 3 Description for reference
 

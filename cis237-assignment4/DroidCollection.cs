@@ -224,6 +224,13 @@ namespace cis237_assignment4
             }
 
             MergeSort.Sort(droidCollection, lengthOfCollection);
+
+            droidList = new GenericStack<IDroid>();
+
+            for (int i = 0; i < lengthOfCollection; i++)
+            {
+                droidList.Push(droidCollection[i]);
+            }    
         }
     }
 }

@@ -354,6 +354,7 @@ namespace cis237_assignment4
         
         public void SortByModel()
         {
+            DroidCollection.SortByModel();
             Console.Clear();
             Console.WriteLine("DROIDS SORTED BY MODEL");
             Console.WriteLine("");

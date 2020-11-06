@@ -69,8 +69,6 @@ namespace cis237_assignment4
         // Overriden toString method that will return a string representing the basic information for any droid
         public override string ToString()
         {
-            CalculateTotalCost();
-
             return GetModelToString() +
                 "Material: " + this.material + Environment.NewLine +
                 "Color: " + this.color + Environment.NewLine;
@@ -142,19 +140,6 @@ namespace cis237_assignment4
         // Outside Reference: https://docs.microsoft.com/en-us/troubleshoot/dotnet/csharp/use-icomparable-icomparer
         public int CompareTo(object obj)
         {
-            //if (obj == null)
-            //{
-            //    return 1;
-            //}
-            //Droid otherPrice = obj as Droid;
-            //if (otherPrice != null)
-            //{
-            //    return this.totalCost.CompareTo(otherPrice.totalCost);
-            //}
-            //else
-            //{
-            //    throw new ArgumentException("Object not droid");
-            //}
             IDroid droid = (Droid)obj;
             return decimal.Compare(this.totalCost, droid.TotalCost);
         }

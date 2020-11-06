@@ -43,14 +43,14 @@ namespace cis237_assignment4
                 base.ToString() +
                 "Number Of Languages: " + this.numberOfLanguages + Environment.NewLine;
 
-            if (this.GetType() == typeof(ProtocolDroid))
-            {
-                returnString += Environment.NewLine +
-                    this.TotalCost.ToString("C") +
-                    Environment.NewLine + Environment.NewLine +
-                    "****************************" +
-                    Environment.NewLine;
-            }
+            //if (this.GetType() == typeof(ProtocolDroid))
+            //{
+            //    returnString += Environment.NewLine +
+            //        this.TotalCost.ToString("C") +
+            //        Environment.NewLine + Environment.NewLine +
+            //        "****************************" +
+            //        Environment.NewLine;
+            //}
 
             return returnString;
         }

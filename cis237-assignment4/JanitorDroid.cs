@@ -50,21 +50,19 @@ namespace cis237_assignment4
         // Overridden ToString that uses the base ToString method, and appends the missing information.
         public override string ToString()
         {
-            CalculateTotalCost();
-
             string returnString =
                 base.ToString() +
                 "Has Trash Compactor: " + this.hasTrashCompactor + Environment.NewLine +
                 "Has Vacuum: " + this.hasVacuum + Environment.NewLine;
 
-            if (this.GetType() == typeof(JanitorDroid))
-            {
-                returnString += Environment.NewLine +
-                    this.TotalCost.ToString("C") +
-                    Environment.NewLine + Environment.NewLine +
-                    "****************************" +
-                    Environment.NewLine;
-            }
+            //if (this.GetType() == typeof(JanitorDroid))
+            //{
+            //    returnString += Environment.NewLine +
+            //        this.TotalCost.ToString("C") +
+            //        Environment.NewLine + Environment.NewLine +
+            //        "****************************" +
+            //        Environment.NewLine;
+            //}
 
             return returnString;
         }
